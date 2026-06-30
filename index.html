@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshwa Ahmad </title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Modal deployment */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(4, 17, 39, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: linear-gradient(145deg, #0c1a36, #112846);
+      border: 1px solid rgba(255, 139, 51, 0.28);
+      border-radius: 24px;
+      padding: 2rem;
+      max-width: 860px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.4rem;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--accent); }
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-right: 2rem;
+    }
+    .modal-subtitle {
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-top: -0.8rem;
+    }
+    .modal-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .modal-images img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .modal-caption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+    @media (max-width: 600px) {
+      .modal-images { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <span class="brand-symbol">JA</span>
+        <div>
+          <h1>Joshwa Ahmad</h1>
+          <p class="eyebrow">Data and Business Enthusiast</p>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Work Experiance</a>
+        <a href="#contact">Education</a>
+        <a href="#contact">Certification</a>
+        <a href="#contact">Contact</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Data Analyst | Business Analyst | Business Intelligence </p>
+          <h2>Transformando datos en soluciones escalables y profesionales</h2>
+          <p class="hero-text">
+           Data enthusiast with a master’s in applied business, specialising in Data Engineering and Analytics,  
+           with hands-on experience in predictive modelling, statistical analysis, and transforming complex
+           data into actionable insights.  
+          </p>
+          <div class="hero-actions">
+            <a class="cta-button accent" href="#contact">
+              <span class="icon-phone" aria-hidden="true"></span>
+              Contactar
+            </a>
+            <a class="cta-button" href="assets/Joshwa Ahmad CV.pdf" download>
+              <span class="icon-pdf" aria-hidden="true"></span>
+              Descargar CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-frame">
+              <img src="assets/Joshwa_1.png" alt="Joshwa Ahmad" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container section-inner">
+        <div class="section-heading">
+          <span>Sobre mí</span>
+          <h2>Profesional enfocado en datos, cloud y BI</h2>
+        </div>
+        <div class="about-copy">
+          <p>Business graduate with experience across operations, sales, and business analysis environments, currently orienting my career towards Data Analytics, Data Engineering and Cloud-supported Data solutions.</p>
+          <p>Business Analyst with experience driving data-led improvements in sales conversion and customer satisfaction at Eduport Academic Research Centre. Currently building business analysis and governance expertise at Tiaki Taonga Trust</p>
+          <p>I combine my professional experience and Master of Applied Business with self-directed learning in Data and Cloud, including Microsoft Azure, building toward data-oriented analysis and engineering.<p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+      <div class="container section-inner">
+        <div class="section-heading">
+          <span>Stack técnico & Habilidades</span>
+          <h2>Herramientas, plataformas y capacidades clave</h2>
+        </div>
+
+        <div class="project-cards-grid">
+
+          <!-- Card Stack técnico -->
+          <article class="project-card-enterprise">
+            <div class="pce-glow pce-glow--blue"></div>
+            <div class="pce-header">
+              <div class="pce-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+              </div>
+              <div class="pce-meta">
+                <span class="pce-category">Technology · Platforms · Languages</span>
+                <h3 class="pce-title">Technical stack</h3>
+              </div>
+            </div>
+            <p class="pce-description">Herramientas y plataformas utilizadas en producción para construir pipelines de datos, modelos analíticos y soluciones cloud robustas.</p>
+            <div class="pce-stack">
+              <span>SQL</span>
+              <span>Azure basics</span>
+              <span>Snowflake</span>
+              <span>Databricks</span>
+              <span>Power BI</span>
+              <span>Python</span>
+              <span>Apache Spark</span>
+              <span>ETL & Pipelines basics</span>
+              <span>Draw.io</span>
+              <span>R</span>
+              <span>PostgreSQL</span>
+              <span>Tableau</span>
+              <span>Looker Studio</span>
+              <span>Excel</span>
+            </div>
+            <ul class="pce-impact">
+              <li>Data reporting and trend analysis with Excel and SQL</li>
+              <li>Customer and sales tracking with CRM platforms (Zoho, LeadSquared)</li>
+              <li>Executive visualization with Power BI and Tableau</li>
+              <li>Statistical analysis with Python and regression modelling</li>
+            </ul>
+          </article>
+
+          <!-- Card Habilidades -->
+          <article class="project-card-enterprise">
+            <div class="pce-glow pce-glow--orange"></div>
+            <div class="pce-header">
+              <div class="pce-icon pce-icon--orange" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg>
+              </div>
+              <div class="pce-meta">
+                <span class="pce-category pce-category--orange">Capacidades · Negocio · Metodología</span>
+                <h3 class="pce-title">Habilidades profesionales</h3>
+              </div>
+            </div>
+            <p class="pce-description">Capacidades transversales que permiten traducir necesidades de negocio en arquitecturas de datos funcionales, escalables y orientadas a impacto.</p>
+            <div class="pce-stack pce-stack--orange">
+              <span>Ingeniería de datos</span>
+              <span>Business Analysis</span>
+              <span>Data Analydsis</span>
+              <span>Reporting & BI</span>
+              <span>Soluciones Cloud</span>
+              <span>Agile methodology</span>
+              <span>JIRA</span>
+              <span>Automatización de Procesos</span>
+              <span>Operational Optimisation</span>
+              <span>Process Building</span>
+            </div>
+            <ul class="pce-impact pce-impact--orange">
+              <li>Business and operational reporting through data-driven dashboards</li>
+              <li>Process improvement through data trend analysis and forecasting</li>
+              <li>Clear communication of data insights to non-technical stakeholders</li>
+              <li>Problem-solving in fast-paced, high-compliance environments</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="container section-inner">
+        <div class="section-heading">
+          <span>Projects</span>
+          <h2>Iniciativas profesionales y personales</h2>
+        </div>
+        <p class="projects-narrative">Projects aimed at solving real business problems through data Collection, Understanging and advanced analytics.</p>
+
+        <div class="project-cards-grid">
+
+          <!-- Card 1 — TFM Cercanías RENFE -->
+          <article class="project-card-enterprise">
+            <div class="pce-glow pce-glow--blue"></div>
+            <div class="pce-header">
+              <div class="pce-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <div class="pce-meta">
+                <span class="pce-category">Data Engineering · Tiempo Real · ML</span>
+                <h3 class="pce-title">Predicción de retrasos en Cercanías Madrid (RENFE)</h3>
+              </div>
+            </div>
+            <p class="pce-description">Pipeline 24/7 desplegado en VPS que captura feeds GTFS-Realtime de RENFE y datos AEMET para construir desde cero el histórico de retrasos — dato que RENFE no publica — con el que entrenar un modelo predictivo.</p>
+            <div class="pce-stack">
+              <span>Python</span>
+              <span>GTFS-Realtime</span>
+              <span>systemd</span>
+              <span>Linux VPS</span>
+              <span>GitHub / rclone</span>
+              <span>Apache Spark</span>
+              <span>LSTM / GRU</span>
+            </div>
+            <ul class="pce-impact">
+              <li>Pipeline de ingesta multifuente operativo 24/7 en producción</li>
+              <li>+320.000 registros capturados al día</li>
+              <li>Arquitectura raw → Parquet → backup automático a Drive</li>
+              <li>Resiliencia verificada: reinicio automático con systemd</li>
+            </ul>
+            <div class="pce-actions">
+              <a class="pce-btn pce-btn--primary" href="https://github.com/I-Bovingdon/tfm-cercanias-colectores/blob/main/README.md" target="_blank" rel="noopener">Ver arquitectura</a>
+              <a class="pce-btn" href="https://github.com/I-Bovingdon/tfm-cercanias-colectores" target="_blank" rel="noopener">GitHub</a>
+              <a class="pce-btn" href="https://github.com/I-Bovingdon/tfm-cercanias-colectores/blob/main/Estructura_Datos_TFM_Cercanias.pdf" target="_blank" rel="noopener">Estructura de datos</a>
+            </div>
+          </article>
+
+          <!-- Card 2 — Pump It Up -->
+          <article class="project-card-enterprise">
+            <div class="pce-glow pce-glow--orange"></div>
+            <div class="pce-header">
+              <div class="pce-icon pce-icon--orange" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/>
+                </svg>
+              </div>
+              <div class="pce-meta">
+                <span class="pce-category pce-category--orange">ML · IA Generativa · Interfaces</span>
+                <h3 class="pce-title">Pump It Up — Predicción de bombas de agua (Tanzania)</h3>
+              </div>
+            </div>
+            <p class="pce-description">Pipeline ML completo sobre 59.000 bombas de agua en Tanzania: de la clasificación con ensemble ponderado a dos interfaces de uso real — predictor individual con Gradio y asistente conversacional con la API de Claude.</p>
+            <div class="pce-stack">
+              <span>Python</span>
+              <span>scikit-learn</span>
+              <span>XGBoost / LightGBM</span>
+              <span>LangGraph</span>
+              <span>Anthropic API</span>
+              <span>Gradio</span>
+              <span>Pandas</span>
+              <span>SHAP</span>
+              <span>Matplotlib</span>
+            </div>
+            <ul class="pce-impact">
+              <li>Accuracy global engaña: la clase crítica es el 7,3%</li>
+              <li>Detección x2 de bombas reparables frente a modelos base</li>
+              <li>Predictor individual en vivo con probabilidad por clase</li>
+              <li>Asistente IA conversacional sobre los resultados del análisis</li>
+            </ul>
+            <div class="pce-actions">
+              <a class="pce-btn pce-btn--primary" href="https://github.com/I-Bovingdon/MachineLearning_Pipeline_WaterInfrastructure_Agentic_EDA/blob/main/README.md" target="_blank" rel="noopener">Ver arquitectura</a>
+              <a class="pce-btn" href="https://github.com/I-Bovingdon/MachineLearning_Pipeline_WaterInfrastructure_Agentic_EDA" target="_blank" rel="noopener">GitHub</a>
+              <button class="pce-btn" onclick="document.getElementById('modal-pumpitup').classList.add('open')">Despliegues</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container section-inner">
+        <div class="section-heading">
+          <span>Contact</span>
+          <h2>Contact Information</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="tel:+34692871279">
+            <span class="icon-phone"></span>
+            <div>
+              <h3>Phone</h3>
+              <p>+64 21 0869 1242</p>
+            </div>
+          </a>
+          <a class="contact-card" href="mailto:ishmaelbovingdon@gmail.com">
+            <span class="icon-mail"></span>
+            <div>
+              <h3>Email</h3>
+              <p>joshwaahmad@gmail.com</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/joshwa-ahmad/" target="_blank" rel="noopener noreferrer">
+            <span class="icon-linkedin"></span>
+            <div>
+              <h3>LinkedIn</h3>
+              <p>Ver perfil</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://github.com/Joshwaahmad" target="_blank" rel="noopener noreferrer">
+            <span class="icon-github"></span>
+            <div>
+              <h3>GitHub</h3>
+              <p>Ver repositorio</p>
+            </div>
+          </a>
+          <div class="contact-card location-card" role="button" aria-label="Remoto, Madrid, España">
+            <span class="icon-location"></span>
+            <div>
+              <h3>Address</h3>
+              <p>Arundel Street, Mount Roskill, Auckland, 1041</p>
+            </div>
+          </div>
+          <a class="contact-card" href="assets/CV_Ismael_Bovingdon_2026_ATS.pdf" download>
+            <span class="icon-pdf"></span>
+            <div>
+              <h3>Download CV</h3>
+              <p>PDF</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p></p>
+    </div>
+  </footer>
+
+  <!-- Modal: Pump It Up Deployment -->
+  <div id="modal-pumpitup" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Deployment — Pump It Up">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('modal-pumpitup').classList.remove('open')" aria-label="Cerrar">×</button>
+      <p class="modal-subtitle">ML · IA Generativa · Interfaces</p>
+      <p class="modal-title">Pump It Up — Interfaces de deployment</p>
+      <div class="modal-images">
+        <div>
+          <img
+            src="https://raw.githubusercontent.com/I-Bovingdon/MachineLearning_Pipeline_WaterInfrastructure_Agentic_EDA/main/images/EDA%26Predictor.png"
+            alt="Annex B — EDA Explorer & Individual Predictor (Gradio)"
+          />
+          <p class="modal-caption">Annex B — Explorador EDA y predictor individual con Gradio</p>
+        </div>
+        <div>
+          <img
+            src="https://raw.githubusercontent.com/I-Bovingdon/MachineLearning_Pipeline_WaterInfrastructure_Agentic_EDA/main/images/LLM%20Assistant.png"
+            alt="Annex C — Asistente conversacional IA (Claude API)"
+          />
+          <p class="modal-caption">Annex C — Asistente conversacional IA con API de Claude</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cerrar modal al hacer clic fuera del box
+    document.getElementById('modal-pumpitup').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') document.getElementById('modal-pumpitup').classList.remove('open');
+    });
+
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach((header) => {
+      header.addEventListener('click', () => {
+        const expanded = header.getAttribute('aria-expanded') === 'true';
+        accordionHeaders.forEach((item) => {
+          item.setAttribute('aria-expanded', 'false');
+          item.nextElementSibling.style.maxHeight = null;
+        });
+        if (!expanded) {
+          header.setAttribute('aria-expanded', 'true');
+          const panel = header.nextElementSibling;
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
